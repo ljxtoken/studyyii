@@ -21,10 +21,7 @@ class TestController extends Controller
 
     public function actionTestdb()
     {
-        //$data = \Yii::$app->db->createCommand("select * from test")->queryOne();
-        //$data=db::select_one('select * from test');
-//        $bindarray=array(':id'=>1);
-//        $data=db::select_all('select * from test',$bindarray);
+
         $data2 = \Yii::$app->db->createCommand("select * from test where id=:id")->bindValue(':id','2')->queryOne();
         return $this->render('testdb', ['data' => $data2]);
     }
